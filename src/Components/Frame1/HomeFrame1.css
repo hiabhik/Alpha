@@ -1,0 +1,31 @@
+.logo{
+    /* position: absolute;
+    top: 80px; */
+    width: 180px;
+    height: 60px;
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+.HomeContent{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 700px;
+    height: 100%;
+    padding: 10px 100px;
+}
+
+.homeSpecification{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.specChild{
+    margin: 10px;
+}
+.specChild p{
+    margin: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #5D5D5D;
+}

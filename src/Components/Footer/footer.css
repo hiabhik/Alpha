@@ -1,0 +1,24 @@
+.footer{
+    display:flex;
+    justify-content: space-around;
+    padding: 50px 0px;
+    background-color: #1A1A1A;
+    color: #fff;
+}
+.subfooter ul li{
+    color: #727272 !important;
+}
+.subfooter{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.subbox{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,36 @@
+.HomeFrame3{
+    display: flex;
+    background-color: #E5E5E5;
+}
+.HomeFrame3img{
+    width: 681px;
+}
+.bookslot{
+    padding: 100px 90px;
+    width: 95%;
+}
+.slot{
+    display: flex;
+    align-items: center;
+}
+.slotContent{
+    width: 80%;
+}
+.slotContent p{
+    color: #515151;
+    font-size: 14px;
+    margin: 10px 0px;
+    font-family: Aktifoa-light;
+}
+.slotBox{
+    height: 450px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.circleslot{
+    background-color: white !important;
+    margin: auto 30px auto 0px  !important;
+
+}

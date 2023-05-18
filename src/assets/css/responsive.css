@@ -1,0 +1,57 @@
+@media screen and (max-width:800px){
+    .HomeContent{
+        width: auto;
+        padding:10px
+    }
+    .HomeContent2{
+        width: auto;
+        padding: 10px;
+    }
+    h4{
+        width: auto !important;
+    }
+    .HomeFrame3{
+        flex-direction: column-reverse;
+    }
+    .bookslot{
+        padding: 10px 30px !important;
+        width: 100% !important;
+    }
+    .subfooter{
+        flex-direction: column;
+    }
+    .slotBox{
+        height: auto !important;
+    }
+    .slotContent h3{
+        margin: 10px 0px  !important;
+    }
+    .slot{
+        align-items: flex-start !important;
+        flex-direction: column;
+        margin: 15px  0px !important;
+    }
+    .slotContent{
+        width: 100% !important;
+    }
+    .HomeFrame3img{
+        height: 400px;
+        width: 100%;
+        background-position: center top;
+        background-size: 100% auto !important;
+    }
+    .contact{
+        position: initial;
+        width: 90%;
+        margin: 20px auto;
+    }
+    .subbox{
+        width: 80%;
+    }
+    .footdivide{
+        width: 120%;
+    }
+    input,select{
+        width: 120px;
+    }
+}
