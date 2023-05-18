@@ -1,5 +1,5 @@
 import React from 'react'
-import './HomeFrame3.css'
+import './thirdsection.css'
 import Grass from '../../assets/img/grass.png'
 import Slot1 from '../../assets/img/svg/slot1.svg'
 import Slot2 from '../../assets/img/svg/slot2.svg'
@@ -7,11 +7,20 @@ import Slot3 from '../../assets/img/svg/slot3.svg'
 import Slot4 from '../../assets/img/svg/slot4.svg'
 let style={
     backgroundImage:`url(${Grass})`,
-    // height:"90vh",
+  
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
   }
-const HomeFrame3 = ({prop}) => {
+const ThirdSection = ({prop}) => {
+
+
+    const scrolltop=()=>{
+        window.scrollTo({
+          top:0,
+          behavior:'smooth'
+        })
+      }
+    
   return (
     <div  className='HomeFrame3'>
         <div className='HomeFrame3img'  style={style}></div>
@@ -55,7 +64,7 @@ const HomeFrame3 = ({prop}) => {
                     </div>
                 </div>
             </div>
-                <button className='btn' onClick={()=>{}}>
+                <button className='btn' onClick={scrolltop}>
                     Request a call back
                     <i className="fa-solid fa-arrow-right btnarrow"></i>
                 </button>
@@ -64,7 +73,7 @@ const HomeFrame3 = ({prop}) => {
   )
 }
 
-export default HomeFrame3
+export default ThirdSection;
 
 
 

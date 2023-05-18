@@ -4,16 +4,16 @@ import Logo from '../../assets/img/logoMain.png'
 import Quality from '../../assets/img/svg/Quality.svg'
 import High from '../../assets/img/svg/High.svg'
 import Exchanged from '../../assets/img/svg/Exchanged.svg'
-import './HomeFrame1.css'
+import './firstsection.css'
 let style={
   background:`url(${Banner})`,
   height:"100vh",
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition:"center",
-  // backgroundAttachment:"center"
+  
 }
-const HomeFrame1 = () => {
+const Firstsection = () => {
   return (
     <div style={style}>
       <div className='HomeContent'>
@@ -45,4 +45,4 @@ const HomeFrame1 = () => {
   )
 }
 
-export default HomeFrame1
+export default Firstsection

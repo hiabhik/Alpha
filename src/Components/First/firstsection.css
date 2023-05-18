@@ -1,6 +1,5 @@
 .logo{
-    /* position: absolute;
-    top: 80px; */
+  
     width: 180px;
     height: 60px;
     background: transparent 0% 0% no-repeat padding-box;
@@ -18,7 +17,7 @@
 
 .homeSpecification{
     display: flex;
-    /* justify-content: space-between; */
+   
 }
 .specChild{
     margin: 10px;

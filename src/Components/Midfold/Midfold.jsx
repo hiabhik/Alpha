@@ -1,34 +1,110 @@
-import React, { useEffect, useState } from 'react'
-import './contact.css'
-const Contact = ({prop}) => {
-  let [data,setData]=useState({})
-  const [errors, setErrors] = useState({})
-    useEffect(()=>{
-        window.scrollTo(0, 0);
-    },[])
+import React, {  useState } from 'react'
+import './midfold.css';
 
-  let popUp=()=>{
-    return (
-        <>
-            <div style={{backgroundColor:"green","widows":"300px",padding:"20px"}}>Hello</div>
-        </>
-    )
-  }
-  let onChangeHandler=(e)=>{
-    setData({...data,[e.target.name]:e.target.value})
-  }
-  function emailValidation(){
-    return /\S+@\S+\.\S+/.test(data.email)
+
+const Midfold = () => {
+  const [data, setData] = useState({});
+  const [errors, setErrors] = useState({});
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const onChangeHandler = (e) => {
+    setData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+
+  const SubmissionMessage = () => (
+    <div className="submission-message">
+      <h3>Thank you for your submission!</h3>
+      <p>We appreciate your feedback.</p>
+    </div>
+  );
+
+
+
+
+
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!data.fname) {
+      newErrors.fname = 'First Name is required';
     }
 
-  let submitHandler=(e)=>{
-    e.preventDefault()
-    
-  }
+    if (!data.lname) {
+      newErrors.lname = 'Last Name is required';
+    }
+
+    if (!data.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+
+    if (!data.number) {
+      newErrors.number = 'Contact Number is required';
+    }
+
+    if (!data.company) {
+      newErrors.company = 'Company is required';
+    }
+
+    if (!data.state) {
+      newErrors.state = 'State is required';
+    }
+
+    if (!data.describe) {
+      newErrors.describe = 'Please select an option';
+    }
+
+    if (!data.Distributor) {
+      newErrors.Distributor = 'Please select a preferred distributor';
+    }
+
+    if (!data.additional) {
+      newErrors.additional = 'Additional Information is required';
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    const isValid = validateForm();
+
+    if (isValid) {
+        
+        setIsSubmitted(true);
+  
+        setData({
+            fname: '',
+            lname: '',
+            email: '',
+            number: '',
+            company: '',
+            state: '',
+            describe: '',
+            Distributor: '',
+            additional: ''
+          });
+
+          setErrors({});
+      } else {
+       
+        setIsSubmitted(false);
+      }
+  };
 
   return (
     <div className='contact' >
-        <div>
+      <div>
             <h2>Connect with us</h2>
             <h5 style={{fontFamily:"Aktifoa-light"}}>for outstanding protective overlaminates</h5>
         </div>
@@ -65,10 +141,10 @@ const Contact = ({prop}) => {
             <div  style={{display:"flex",flexDirection:"column"}}>
                 <label htmlFor="lname">State</label>
                 <select name="state" onChange={onChangeHandler}>
-                    <option value="">Default</option>
-                    <option value="UP">UP</option>
-                    <option value="MP">MP</option>
-                    <option value="TN">TN</option>
+                    <option value="YourState">California</option>
+                    <option value="New jersey">New Jersey</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Florida">Florida</option>
                 </select>
                 {errors.state && <span style={{fontSize:"12px",color:"red"}}>*{errors.state}</span>}
             </div>
@@ -76,7 +152,7 @@ const Contact = ({prop}) => {
         <div style={{display:"flex",flexDirection:"column"}}>
             <label htmlFor="describe">How would you describe yourself?</label>
             <select name="describe" className='select' onChange={onChangeHandler}>
-                <option value="">Default</option>
+                <option value="Aerotect">Aerotect</option>
                 <option value="Frontend Developer">Frontend Developer</option>
                 <option value="Backend Developer">Backend Developer</option>
                 <option value="Full stack Developer">Full stack Developer</option>
@@ -87,9 +163,9 @@ const Contact = ({prop}) => {
             <label htmlFor="Distributor">Preferred Distributor:</label>
             <select name="Distributor" className='select' onChange={onChangeHandler}>
                 <option value="">Default</option>
-                <option value="AJ">AJ</option>
-                <option value="Ajju">Ajju</option>
-                <option value="Arjun">Arjun</option>
+                <option value="Rita">Rita</option>
+                <option value="Sam">Sam</option>
+                <option value="John">John</option>
             </select>
             {errors.Distributor && <span style={{fontSize:"12px",color:"red"}}>*{errors.Distributor}</span>}
         </div>
@@ -108,9 +184,20 @@ const Contact = ({prop}) => {
             <i className="fa-solid fa-arrow-right btnarrow"></i>
             </button>
         </div>
-    </div>
-  )
-}
 
-export default Contact
+        <div className="contact-container">
+      {isSubmitted && <SubmissionMessage />}
+    
+        
+        <div style={{ textAlign: 'center' }}>
+        
+        </div>
+      </div>
+    </div>
+
+    
+  );
+};
+
+export default Midfold;
 

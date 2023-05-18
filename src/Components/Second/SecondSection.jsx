@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from '../../assets/img/BlueCar.png'
-import './HomeFrame2.css'
+import './secondsection.css'
+
 let style={
     backgroundImage:`url(${Banner})`,
     height:"100vh",
@@ -8,7 +9,21 @@ let style={
     backgroundRepeat: 'no-repeat',
     backgroundPosition:"center",
   }
-const HomeFrame2 = ({prop}) => {
+
+
+
+
+
+const SecondSection = () => {
+
+  const ScrollTotop=()=>{
+    window.scrollTo({
+      top:20,
+      behavior:'smooth'
+    })
+  }
+
+
   return (
     <div style={style}>
       <div className='HomeContent2'>
@@ -18,13 +33,12 @@ const HomeFrame2 = ({prop}) => {
           </div>
           <div className='FeaturesHome2'>
             <h3 style={{fontWeight:"bold"}}>Features & Benefits:</h3>
-            <ul>
+            <ul >
               <li>Premium vertical durability of up to 7 years and up to 2 years horizontal durability protection.</li>
               <li>The high gloss finish enhances the appearance of graphics and adds a special touch to help your graphics stand out.</li>
               <li>Our digital overlaminates can be used on a variety of substrates, including banners, vehicle graphics, outdoor signage, and more.</li>
             </ul>
-            <button className='btn' onClick={()=>{
-              }}>
+            <button className='btn' onClick={ScrollTotop}>
               Inquire now 
             <i className="fa-solid fa-arrow-right btnarrow"></i>
             </button>
@@ -34,4 +48,4 @@ const HomeFrame2 = ({prop}) => {
   )
 }
 
-export default HomeFrame2
+export default SecondSection

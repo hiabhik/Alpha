@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home'
+import App from './Pages/App'
 import "./assets/css/responsive.css"
 const Main = () => {
   return (
     <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<App/>} />
     </Routes>
   )
 }
